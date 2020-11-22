@@ -1,0 +1,57 @@
+.el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .el-aside {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+  }
+  
+  .el-main {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+    border:solid 1px #eee;
+  }
+  
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+  
+  .el-container:nth-child(5) .el-aside,
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  }
+  
+  .el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+  }
+  .el-cascader, .el-select{
+    width: 100%;
+  }
+  h2,h3,h4,h5,h6{
+    line-height: 200%;
+    text-align: left;
+  }
+  .demo-block .meta {
+    height: inherit;
+    line-height: 30px;
+    text-align: left;
+  }
+  .page-component .content>table td {
+    text-align: left;
+    word-break: break-all;
+}
+.container, .page-container {
+  width: auto;
+}
+.page-container{
+  padding-top: 10px;
+}
+  
