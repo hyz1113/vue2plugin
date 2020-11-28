@@ -54,11 +54,20 @@
 .auto {
   margin: 0 auto;
 }
+.f-14{
+  font-size: 14px;
+} 
+.c-p {
+  cursor: pointer;
+}
 .d-i-b{
   display: inline-block;
 }
 .v-a-t{
   vertical-align: top;
+}
+.m-t-20 {
+  margin-top: 20px;
 }
 .container, .page-container {
   width: auto;

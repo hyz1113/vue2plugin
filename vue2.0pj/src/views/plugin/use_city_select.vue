@@ -12,7 +12,7 @@
   */
 -->
 <template>
-  <section>
+  <section class="page-component">
     <h2>city-Select 城市选择</h2>
     <h3></h3>
     <p>城市可多选也可单选</p>
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-
+    <div class="content">
     <h3>Props 组件参数说明</h3>
 
     <table>
@@ -73,7 +73,7 @@
       </tr>
       </tbody>
     </table>
-
+    </div>
   </section>
 </template>
 

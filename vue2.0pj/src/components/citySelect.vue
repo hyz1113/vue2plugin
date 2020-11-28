@@ -1,12 +1,14 @@
 <template>
   <div class="el-city-select d-i-b">
     <div class="el-muilt-select-city" @click.stop="closeDrop=false">
-      <span class="d-i-b" v-show="showSelectName.length>0">
-        {{ showSelectName[showSelectName.length - 1] }}
-        <i v-show="showSelectName.length>0" class="el-icon-close" @click.stop="handleIconClick"></i>
-      </span>
-      <b class="d-i-b" v-show="showSelectName.length>0 && muilt">{{ showSelectName.length }}</b>
-      <b class="d-i-b pull-right f-12" v-show="showSelectName.length>0 && muilt" @click.stop="clearSelect">X</b>
+      <div>
+        <span class="d-i-b" v-show="showSelectName.length>0">
+          {{ showSelectName[showSelectName.length - 1] }}
+          <i v-show="showSelectName.length>0" class="el-icon-close" @click.stop="handleIconClick"></i>
+        </span>
+        <b class="d-i-b" v-show="showSelectName.length>0 && muilt">{{ showSelectName.length }}</b>
+      </div>
+      <b class="d-i-b clear-btn pull-right f-12" v-show="showSelectName.length>0 && muilt" @click.stop="clearSelect">X</b>
     </div>
     <el-card class="box-card" v-show="closeDrop===false">
       <div>
@@ -42,9 +44,10 @@
   </div>
 </template>
 <script>
-import {cityList} from '@/mock/city'
+import city from '@/mock/city'
 export default {
   name: 'citySelect',
+  mixins: [city],
   data () {
     return {
       pinyin: ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'L', 'N', 'Q', 'S', 'T', 'X', 'Y', 'Z'],
@@ -105,7 +108,7 @@ export default {
       this.cityList.forEach(item => {
         item.hasAllSelect = false
       })
-      that.source = response.data.data
+      that.source = this.cityList
       that.sourceCopy = JSON.parse(JSON.stringify(that.source))
       that.setDefault() // 设置默认值
       // queryCityTreeAll({}).then((response) => {
@@ -250,3 +253,193 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+ .b-r-3{
+  border-radius: 3px;
+}
+.el-city-select {
+  font-size: 14px;
+  position: relative;
+  vertical-align: middle;
+  .el-muilt-select-city {
+    width: 200px;
+    height: 28px;
+    border: solid 1px #dedfe2;
+    padding: 5px;
+    display: flex;
+    color: #373737;
+    justify-content: space-between;
+    span{
+      max-width: 132px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      background-color: #f4f4f5;
+      border:solid 1px #e9e9eb;
+      color: #909399;
+      padding: 2px 8px;
+      font-size: 14px;
+      margin-right: 10px;
+      @extend .b-r-3;
+      .el-icon-close{
+        background-color: #C0C4CC;
+        border-radius: 10px;
+      }
+    }
+    b{
+      font-weight: normal;
+      vertical-align: top;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    .clear-btn{
+       cursor: pointer;
+        color: #7d8097;
+        border: solid 1px #dedfe2;
+        border-radius: 7px;
+        padding: 2px 4px;
+        line-height: 22px;
+        margin-top: 2px;
+    }
+  }
+  .box-card{
+    width: 432px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    height: 300px;
+    .el-card__body{
+      padding: 10px;
+    }
+    .query-key{
+      border-bottom:solid 1px #dedfe2;
+      padding-bottom: 10px;
+      color: #7d8097;
+      font-size: 12px;
+      span{
+        margin-right: 10px;
+      }
+      .active{
+        color: #15559a;
+      }
+      .closeWindow{
+        float: right;
+        font-style: normal;
+        color: #7d8097;
+        font-size: 16px;
+        font-weight: normal;
+        cursor: pointer;
+      }
+    }
+    .text{
+      text-align: left;
+      div{
+        color: #373737;
+        width: 362px;
+        i{
+          width: 4px;
+          height: 14px;
+          background: #15559A;
+          border-radius: 10px;
+          vertical-align: top;
+          margin: 1px 2px 0 0 ;
+        }
+        span{
+          color: #7d8097;
+          margin:7px 10px 0 0;
+          display: inline-block;
+        }
+      }
+    }
+    .city-list{
+      height: 226px;
+      overflow: auto;
+      .active{
+        color: #15559a;
+      }
+      .province-key{
+        color: #7d8097;
+      }
+      .circle-radio{
+        width: 8px;
+        height: 8px;
+        vertical-align: top;
+        background: #dedfe2;
+        margin: 10px 5px 0 0;
+        border-radius: 5px;
+        &.active{
+          background: #15559a;
+        }
+      }
+    }
+  }
+}
+.selectCityClass {
+  width: 432px;
+  overflow: hidden;
+  z-index: 2;
+  height: 300px;
+  .el-card__body{
+    padding: 10px;
+  }
+  .query-key{
+    border-bottom:solid 1px #dedfe2;
+    padding-bottom: 10px;
+    color: #7d8097;
+    span{
+      margin-right: 10px;
+    }
+    .active{
+      color: #15559a;
+    }
+    .closeWindow{
+      float: right;
+      font-style: normal;
+      color: #7d8097;
+      font-size: 16px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+  }
+  .text{
+    div{
+      color: #373737;
+      width: 382px;
+      i{
+        width: 4px;
+        height: 14px;
+        background: #15559A;
+        border-radius: 10px;
+        vertical-align: top;
+        margin: 1px 2px 0 0 ;
+      }
+      span{
+        color: #7d8097;
+        margin:7px 10px 0 0;
+        display: inline-block;
+      }
+    }
+  }
+  .city-list{
+    height: 226px;
+    overflow: auto;
+    .active{
+      color: #15559a;
+    }
+    .province-key{
+      color: #7d8097;
+    }
+    .circle-radio{
+      width: 8px;
+      height: 8px;
+      vertical-align: top;
+      background: #dedfe2;
+      margin: 10px 5px 0 0;
+      border-radius: 5px;
+      &.active{
+        background: #15559a;
+      }
+    }
+  }
+}
+</style>
