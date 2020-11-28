@@ -10,5 +10,11 @@ export default [
     name: "",
     mate: {},
     component: () => import("@/views/plugin/use_base_table.vue")
+  },
+  {
+    path: "/plugin/use_time_progress_bar",
+    name: "",
+    mate: {},
+    component: () => import("@/views/plugin/use_time_progress_bar.vue")
   }
 ];

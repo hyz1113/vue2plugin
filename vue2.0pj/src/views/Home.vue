@@ -3,7 +3,7 @@
     <el-container>
       <el-aside width="250px">
         <el-menu
-          default-active="1" 
+          default-active="1-1" 
           :default-openeds="defaultOpenid"
           mode="inline"
           v-model="menuList"
@@ -16,7 +16,7 @@
             </template>
             <el-menu-item-group>
               <el-menu-item
-               @click="goto(im.url)"
+               @click="goto(item.url +'/'+ im.url)"
                 v-for="im in item.child"
                 :key="im.id"
                 :index="im.id"

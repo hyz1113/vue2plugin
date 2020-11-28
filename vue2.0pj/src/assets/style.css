@@ -48,6 +48,12 @@
     text-align: left;
     word-break: break-all;
 }
+.ovh{
+  overflow: hidden;
+}
+.auto {
+  margin: 0 auto;
+}
 .d-i-b{
   display: inline-block;
 }
