@@ -48,10 +48,23 @@
     text-align: left;
     word-break: break-all;
 }
+.d-i-b{
+  display: inline-block;
+}
+.v-a-t{
+  vertical-align: top;
+}
 .container, .page-container {
   width: auto;
 }
 .page-container{
   padding-top: 10px;
 }
-  
+.page-component .content table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  margin-bottom: 45px;
+  line-height: 1.5em;
+}
