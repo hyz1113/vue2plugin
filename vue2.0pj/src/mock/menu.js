@@ -19,6 +19,11 @@ export default {
                     name: '时间进度条',
                     url: 'use_time_progress_bar',
                     id: '1-3'
+                },
+                {
+                    name: '城市选择',
+                    url: 'use_city_select',
+                    id: '1-4'
                 }]
             }]
         }

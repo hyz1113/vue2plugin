@@ -16,5 +16,11 @@ export default [
     name: "",
     mate: {},
     component: () => import("@/views/plugin/use_time_progress_bar.vue")
+  },
+  {
+    path: "/plugin/use_city_select",
+    name: "",
+    mate: {},
+    component: () => import("@/views/plugin/use_city_select.vue")
   }
 ];
